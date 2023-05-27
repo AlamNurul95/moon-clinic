@@ -13,7 +13,8 @@ import card6 from '../../../Assets/Services Card Image/card6.jpg';
 
 
 
-const Services = () => {
+const Services = (props) => {
+  const { id,name,image,headings,details } = props.service;
     return (
         <div className='m-5'>
           <Row xs={1} md={3} className="g-2">
@@ -21,7 +22,7 @@ const Services = () => {
           <Card className=''>
             <Card.Img style={{height:"300px"}}  className='w-100' variant="top" src={card1}/>
             <Card.Body>
-              <Card.Title>Regular Lab</Card.Title>
+              <Card.Title>{name}</Card.Title>
               <Card.Text>
                 This is a longer card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -35,7 +36,7 @@ const Services = () => {
           <Card>
             <Card.Img style={{height:"300px"}}   variant="top" src={card2}/>
             <Card.Body>
-              <Card.Title>Emergency Lab Support</Card.Title>
+              <Card.Title>{name}</Card.Title>
               <Card.Text>
                 This is a longer card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
