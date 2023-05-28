@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Shared/Banner/Banner';
 import Services from '../Shared/Services/Services';
+import { Col, Container, Row } from 'react-bootstrap';
 
 
-const Home = ({params}) => {
+const Home = () => {
     
     const [services,setServices]=useState([]);
     useEffect(()=>{
@@ -18,14 +19,12 @@ const Home = ({params}) => {
        
         <div>
             <Banner></Banner> 
-            <div>
+            <div >
                 {
                     services.map(service=><Services
                     key={service.id} service={service}></Services>)
                 }
-            </div>
-                 
-
+            </div>      
         </div>
 
      
