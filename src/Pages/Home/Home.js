@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Shared/Banner/Banner';
 import Services from '../Shared/Services/Services';
+import AboutUs from '../Shared/AboutUs/AboutUs';
 
 
 
@@ -23,7 +24,8 @@ const Home = () => {
                     services.map(service=><Services
                     key={service.id} service={service}></Services>)
                 }
-            </div>      
+            </div>   
+            <AboutUs></AboutUs>   
         </div>
 
      

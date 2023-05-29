@@ -12,17 +12,17 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-1">
-            <Nav.Link href="#features">Home</Nav.Link>
-            <Nav.Link href="#pricing">Our Doctors</Nav.Link>
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#doctors">Our Doctors</Nav.Link>
             <NavDropdown title="Diagonstics Tests" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">1</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
-                Another action
+                2
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">3</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
-                Separated link
+                4
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
