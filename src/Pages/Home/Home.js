@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Banner from '../Shared/Banner/Banner';
 import Services from '../Shared/Services/Services';
 import AboutUs from '../Shared/AboutUs/AboutUs';
+import Consultation from '../Shared/Consultation/Consultation';
 
 
 
@@ -26,6 +27,7 @@ const Home = () => {
                 }
             </div>   
             <AboutUs></AboutUs>   
+            <Consultation></Consultation>
         </div>
 
      
