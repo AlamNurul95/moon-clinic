@@ -3,13 +3,18 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
 
 
 const Services = (props) => {
-  const { id,name,image,headings,details } = props.service;
+  const {id, name,image,headings } = props.service;
+  const navigate = useNavigate();
+    const handleSubmit=()=>{
+      navigate(`/serviceDetails/${id}`);
+    }
     return (
         <div className='m-3'>
             <Row xs={1} md={2} className="g-4">
@@ -22,6 +27,7 @@ const Services = (props) => {
               <Card.Text>
                {headings}
               </Card.Text>
+              <Button onClick={handleSubmit} variant="primary">Details</Button>
             </Card.Body>
           </Card>
         </Col>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Shared/Banner/Banner';
 import Services from '../Shared/Services/Services';
-import { Col, Container, Row } from 'react-bootstrap';
+
 
 
 const Home = () => {
@@ -11,8 +11,7 @@ const Home = () => {
       fetch("http://localhost:5000/services/")
       .then(res=>res.json())
       .then(data=>setServices(data));
-    },[])
-
+    },[]);
 
     
     return (
