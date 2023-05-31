@@ -1,9 +1,15 @@
+import { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+
+
 
 const Header = () => {
+  const {user}=useContext(AuthContext);
+
     return (
         <div >
              <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
@@ -24,6 +30,9 @@ const Header = () => {
           </Nav>
           <Nav>
             <Nav.Link href="#contactus">Contact Us</Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link href="#username">{user?.displayName}</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
