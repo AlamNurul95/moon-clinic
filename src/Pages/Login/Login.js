@@ -3,13 +3,14 @@ import { Button, ButtonGroup } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { FaGoogle,FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 
 const Login = () => {
 
     const {providerLogin}=useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
     
     const handleSubmit = event => {
         event.preventDefault();
@@ -18,13 +19,17 @@ const Login = () => {
         providerLogin(googleProvider)
         .then((result) => {
             const user=result.user;
-            console.log(user);
-           
-            
-           
+            console.log(user);  
           })
-          .catch(error =>console.error(error))
-          
+          .catch(error =>console.error(error))   
+    }
+    const handleGithub = () => {
+        providerLogin(githubProvider)
+        .then((result) => {
+            const user=result.user;
+            console.log(user);  
+          })
+          .catch(error =>console.error(error))   
     }
     return (
         <div>
@@ -53,7 +58,7 @@ const Login = () => {
             <h6 className='text-secondary'>Login With </h6>
              <ButtonGroup vertical>
                 <Button onClick={handleGoogle} className='mb-2' variant="outline-primary"><FaGoogle></FaGoogle>  Login with Google</Button>
-                <Button variant="outline-dark"><FaGithub></FaGithub> Login with Github</Button>
+                <Button onClick={handleGithub} variant="outline-dark"><FaGithub></FaGithub> Login with Github</Button>
             </ButtonGroup>
 
         </div>
