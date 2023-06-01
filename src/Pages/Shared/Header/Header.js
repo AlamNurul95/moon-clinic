@@ -4,6 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+import { Image } from 'react-bootstrap';
+import { FaUser } from 'react-icons/fa';
 
 
 
@@ -28,12 +30,22 @@ const Header = () => {
               </NavDropdown.Item>
               </NavDropdown>    
           </Nav>
-          <Nav>
+          <Nav >
             <Nav.Link href="#contactus">Contact Us</Nav.Link>
           </Nav>
-          <Nav>
+          <Nav className='mt-3'>
             <Nav.Link href="#username">{user?.displayName}</Nav.Link>
+            <Nav.Link eventKey={2} href='#photo'>{user
+            ?
+            <Image style={{height:'40px'}} roundedCircle src={user.photoURL}></Image>
+            :
+            <FaUser></FaUser>
+            }
+            
+            </Nav.Link>
+            
           </Nav>
+          
         </Navbar.Collapse>
       </Container>
     </Navbar>
