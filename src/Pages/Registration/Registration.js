@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -6,13 +6,11 @@ import Form from 'react-bootstrap/Form';
 
 
 const Registration = () => {
-    const handleSubmit = event => {
-        event.preventDefault();
-    }
+
 
     return (
         <div className='m-5 d-flex justify-content-center '>
-           <Form  onSubmit={handleSubmit}>
+           <Form >
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Your Name</Form.Label>
                 <Form.Control name="name" type="text" placeholder="Your Name" />
