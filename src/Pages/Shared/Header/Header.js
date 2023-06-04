@@ -14,7 +14,12 @@ import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
 
-  const{user}=useContext(AuthContext);
+  const{user,logOut}=useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+        .then(() => { })
+        .catch(error => console.error(error))
+}
  
  
 
@@ -45,25 +50,25 @@ const Header = () => {
                                 user?.uid ?
                                     <>
                                         <span>{user?.displayName}</span>
-                                        <Button variant="light">Log out</Button>
+                                        <Button variant="light" onClick={handleLogOut}>Log out</Button>
                                     </>
                                     :
                                     <>
-                                        <Link to='/login'>Login</Link>
-                                        <Link to='/register'>Register</Link>
+                                        <Link className='text-light mx-3' to='/login'>Login</Link>
+                                        <Link className='text-light' to='/registration'>Register</Link>
                                     </>
-
                             }
+
                             </>
 
                             <Link to="/profile">
                             {user?.photoURL ?
                                 <Image
-                                    style={{ height: '30px' }}
-                                    roundedCircle
-                                    src={user?.photoURL}>
-                                </Image>
-                                : <FaUser></FaUser>
+                                style={{ height: '30px' }}
+                                roundedCircle
+                                src={user.photoURL}>
+                            </Image>
+                                : <FaUser className='text-light ms-2'></FaUser>
                             }
                         </Link>
 
