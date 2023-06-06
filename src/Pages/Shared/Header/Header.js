@@ -41,7 +41,7 @@ const Header = () => {
               </NavDropdown.Item>
               </NavDropdown>     */}
           </Nav>
-          <Nav className='me-5' >
+          <Nav  >
             <Nav.Link href="#contactus">Contact Us</Nav.Link>
           </Nav>  
           <Nav  >
