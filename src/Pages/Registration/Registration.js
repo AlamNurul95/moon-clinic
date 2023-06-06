@@ -6,11 +6,20 @@ import Form from 'react-bootstrap/Form';
 
 
 const Registration = () => {
+    const handleSubmit=(event)=>{
+        event.preventDefault();
+        const form=event.target;
+        const name=form.name.value;
+        const email=form.email.value;
+        const password=form.password.value;
+        console.log(name,email,password);
+
+    }
 
 
     return (
         <div className='m-5 d-flex justify-content-center '>
-           <Form >
+           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Your Name</Form.Label>
                 <Form.Control name="name" type="text" placeholder="Your Name" />
