@@ -34,17 +34,17 @@ const Header = () => {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="#doctors">Our Doctors</Nav.Link>
             <Nav.Link href="#diagonstics">Diagonstics Tests</Nav.Link>
-            <NavDropdown title="Client Account" id="collasible-nav-dropdown">
+            {/* <NavDropdown title="Client Account" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/registration">Registration</NavDropdown.Item>
               <NavDropdown.Item href="/login">
                Login
               </NavDropdown.Item>
-              </NavDropdown>    
+              </NavDropdown>     */}
           </Nav>
           <Nav className='me-5' >
             <Nav.Link href="#contactus">Contact Us</Nav.Link>
           </Nav>  
-          <Nav className='me-5' >
+          <Nav  >
                             <>
                             {
                                 user?.uid ?

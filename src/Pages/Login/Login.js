@@ -7,13 +7,24 @@ import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 
 const Login = () => {
-
-    const {providerLogin}=useContext(AuthContext);
+    
+    const {signIn,providerLogin}=useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     
     const handleSubmit = event => {
         event.preventDefault();
+        const form=event.target;
+        const email=form.email.value;
+        const password=form.password.value;
+        signIn(email,password)
+        .then(result=>{
+            const user=result.user;
+            console.log(user);
+        })
+        .catch(error=>{
+            console.error(error);
+        })
     }
     const handleGoogle = () => {
         providerLogin(googleProvider)
@@ -46,7 +57,7 @@ const Login = () => {
                 <Form.Control name="password" type="password" placeholder="Password" required />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button onSubmit={handleSubmit} variant="primary" type="submit">
                 Login
             </Button>
             <Form.Text className="text-danger">
